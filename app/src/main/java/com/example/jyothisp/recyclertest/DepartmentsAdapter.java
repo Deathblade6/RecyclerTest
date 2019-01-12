@@ -11,10 +11,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DepartmentsAdapter extends RecyclerView.Adapter<DepartmentsAdapter.DepartmentsHolder> {
 
     private ArrayList<Department> departmentsList;
+
 
     public DepartmentsAdapter(ArrayList<Department> departments){
         departmentsList = departments;
@@ -49,7 +51,13 @@ public class DepartmentsAdapter extends RecyclerView.Adapter<DepartmentsAdapter.
     public DepartmentsHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         Context context = viewGroup.getContext();
         View view = LayoutInflater.from(context).inflate(R.layout.department_list_item, viewGroup, false);
-        return new DepartmentsHolder(view);
+        DepartmentsHolder holder = new DepartmentsHolder(view);
+        return holder;
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(@NonNull DepartmentsHolder holder) {
+        super.onViewDetachedFromWindow(holder);
     }
 
     @Override

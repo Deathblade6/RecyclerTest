@@ -13,12 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsHolder> {
 
     int lastPosition = -1;
     private ArrayList<Event> eventArrayList;
-    private int listItemLayoutResourceID;
 
 
     public class EventsHolder extends RecyclerView.ViewHolder {
@@ -41,14 +41,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsHold
     }
 
     /**
-     * Constructor (called by flagship events list only.)
-     * @param eventArrayList List of events
      *
-     * @param listItemLayoutResourceID the RID of the layout to be inflated. so that the same adapter can be used for different cases.(for both flagshipevents and normal events).
+     * @param eventArrayList List of events
      */
-    public EventsAdapter(ArrayList<Event> eventArrayList, int listItemLayoutResourceID) {
+    public EventsAdapter(ArrayList<Event> eventArrayList) {
         this.eventArrayList = eventArrayList;
-        this.listItemLayoutResourceID = listItemLayoutResourceID;
     }
 
 
@@ -56,9 +53,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsHold
      * Constructor called for the events list.
      */
     public EventsAdapter() {
-        listItemLayoutResourceID = R.layout.event_list_tem;
     }
-
 
 
     public void setData(ArrayList<Event> data) {
@@ -67,20 +62,21 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsHold
         notifyDataSetChanged();
     }
 
+
     @NonNull
     @Override
     public EventsHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(listItemLayoutResourceID, viewGroup, false);
+                .inflate(R.layout.event_list_tem, viewGroup, false);
         CardView cardView = view.findViewById(R.id.card_view);
         cardView.setPreventCornerOverlap(false); //TODO: Check if this works with all versions.
-        return new EventsHolder(view);
+        EventsHolder holder = new EventsHolder(view);
+        return holder;
     }
 
     @Override
     public void onViewDetachedFromWindow(@NonNull EventsHolder holder) {
         super.onViewDetachedFromWindow(holder);
-
         holder.itemView.clearAnimation();
     }
 

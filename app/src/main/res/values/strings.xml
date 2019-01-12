@@ -3,4 +3,22 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="transition_string">hello</string>
+    <string name="transition_string_cont">container</string>
+    <string name="transition_string_text">bye</string>
+
+    <string name="event_description_title">Description</string>
+    <string name="event_registration_title">Registration</string>
+
+    <string name="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum nunc magna, ut semper erat rutrum vel. Phasellus dictum lacus et mollis aliquet. In vitae interdum diam.</string>
+
+
+    <string name="department_name_cs">Computer Science</string>
+    <string name="department_name_ec">Electronics and Communication</string>
+    <string name="department_name_ce">Civil</string>
+    <string name="department_name_it">Information Technology</string>
+    <string name="department_name_me">Mechanical</string>
+    <string name="department_name_eee">Electrical and Electronics</string>
+    <string name="department_name_se">Safety</string>
 </resources>

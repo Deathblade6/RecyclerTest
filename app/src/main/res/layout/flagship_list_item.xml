@@ -8,6 +8,8 @@
     <RelativeLayout
         android:background="@drawable/cardbgm"
         android:layout_width="match_parent"
+        android:id="@+id/layout_with_bg"
+        android:transitionName="@string/transition_string"
         android:layout_height="match_parent">
 
         <TextView
